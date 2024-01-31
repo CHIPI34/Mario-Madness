@@ -5895,7 +5895,7 @@ class PlayState extends MusicBeatState
 			CoolUtil.precacheSound('psAtt');
 		}
 
-		var discName:String; = PlayState.SONG.song.replace(' ', '');
+		var discName: = PlayState.SONG.song.replace(' ', '');
 
 		#if desktop
 		// Updating Discord Rich Presence.
