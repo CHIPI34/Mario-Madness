@@ -15800,10 +15800,11 @@ class PlayState extends MusicBeatState
 
 				Lib.application.window.resize(PauseSubState.restsizeX, PauseSubState.restsizeY);
 				Lib.application.window.move(PauseSubState.restX, PauseSubState.restY);
+				#if windows
 				CppAPI.restoreWindows();
 				CppAPI.setWallpaper('old');
 			}
-
+                        #end
 			FlxG.mouse.load(TitleState.mouse.pixels, 2);
 
 			Lib.current.scaleX = 1;
@@ -15941,7 +15942,9 @@ class PlayState extends MusicBeatState
 						ease: FlxEase.expoIn,
 						onComplete: function(twn:FlxTween)
 						{
+							#if windows
 							CppAPI.setTransparency(Lib.application.window.title, 0x001957);
+							#end
 							startresize = false;
 							Lib.application.window.borderless = false;
 							Lib.application.window.resize(fsX, fsY);
