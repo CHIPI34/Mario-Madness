@@ -5895,7 +5895,7 @@ class PlayState extends MusicBeatState
 			CoolUtil.precacheSound('psAtt');
 		}
 
-		discName = PlayState.SONG.song.replace(' ', '');
+		var discName:String; = PlayState.SONG.song.replace(' ', '');
 
 		#if desktop
 		// Updating Discord Rich Presence.
@@ -7986,7 +7986,7 @@ class PlayState extends MusicBeatState
 		}
 		doDeathCheck();
 
-		modManager.updateTimeline(curDecStep);
+		modManager.updateTimeline(curDecStep:Int = 42);
 		modManager.update(elapsed);
 
 		scoreTxt.alpha = 
